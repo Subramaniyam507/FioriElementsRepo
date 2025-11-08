@@ -38,3 +38,6 @@ Thumbs.db
 # CDS build output (for SAP CAP projects)
 gen/
 db/data/
+
+# added by cds
+.cdsrc-private.json

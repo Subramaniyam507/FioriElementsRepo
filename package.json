@@ -1,6 +1,8 @@
 {
+  "name": "FioriElementsRepo",
+  "version": "1.0.0",
   "dependencies": {
-    "@cap-js/hana": "^2",
+    "@cap-js/hana": "^2.3.4",
     "@sap/cds": "^9.4.4",
     "ts-node": "^10.9.2",
     "typescript": "^5.9.3"
@@ -8,5 +10,14 @@
   "devDependencies": {
     "@sap/cds-dk": "^9"
   },
-  "cds": {}
+  "scripts": {
+    "start": "cds serve",
+    "bindings": "cds bind --to FioriElementsRepo-db && cds bind --to cds bind --to uaa_FioriElementsRepo && cds bind --to FioriElementsRepo-destination-service && cds bind --to FioriElementsRepo-connectivity"
+  },
+  "cds": {
+    "requires": {
+      "destinations": true,
+      "connectivity": true
+    }
+  }
 }
