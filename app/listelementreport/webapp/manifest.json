@@ -127,6 +127,11 @@
                 "@com.sap.vocabularies.UI.v1.LineItem": {
                   "tableSettings": {
                     "type": "ResponsiveTable"
+                  },
+                  "actions": {
+                    "DataFieldForAction::ProcurementService.viewVendorMaster": {
+                      "enableOnSelect": "single"
+                    }
                   }
                 }
               }
