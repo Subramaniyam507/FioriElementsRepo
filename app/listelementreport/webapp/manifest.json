@@ -105,6 +105,11 @@
           "pattern": "Companies({key}):?query:",
           "name": "CompaniesObjectPage",
           "target": "CompaniesObjectPage"
+        },
+          {
+          "pattern": "Vendor({key}):?query:",
+          "name": "VendorObjectPage",
+          "target": "VendorObjectPage"
         }
       ],
       "targets": {
@@ -129,8 +134,12 @@
                     "type": "ResponsiveTable"
                   },
                   "actions": {
-                    "DataFieldForAction::ProcurementService.viewVendorMaster": {
-                      "enableOnSelect": "single"
+                    "VendorMaster": {
+                      "press": "com.list.listelementreport.ext.controller.VendorMaster.onClick",
+                      "visible": true,
+                      "enabled": true,
+                      "requiresSelection": true,
+                      "text": "{i18n>vendorMaster}"
                     }
                   }
                 }
@@ -146,6 +155,17 @@
             "settings": {
               "editableHeaderContent": false,
               "contextPath": "/Companies"
+            }
+          }
+        },
+          "VendorObjectPage": {
+          "type": "Component",
+          "id": "CompaniesObjectPage",
+          "name": "sap.fe.templates.ObjectPage",
+          "options": {
+            "settings": {
+              "editableHeaderContent": false,
+              "contextPath": "/Vendors"
             }
           }
         }

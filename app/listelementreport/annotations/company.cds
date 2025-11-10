@@ -21,11 +21,6 @@ annotate service.Companies with @(
             Label : '{i18n>CompanyCode}',
             Value : companyCode,
         },
-        {
-            $Type : 'UI.DataFieldForAction',
-            Action : 'ProcurementService.viewVendorMaster',
-            Label : '{i18n>ViewVendorMaster}',
-        },
     ],
     UI.SelectionFields : [
         companyCode,
@@ -43,6 +38,16 @@ annotate service.Companies with @(
                 Descending : false,
             },
         ],
+    },
+    UI.DataPoint #companyCode : {
+        $Type : 'UI.DataPointType',
+        Value : companyCode,
+        Title : '{i18n>Companycode}',
+    },
+    UI.DataPoint #country : {
+        $Type : 'UI.DataPointType',
+        Value : country,
+        Title : '{i18n>Country1}',
     },
 );
 // F4 HELP
@@ -82,4 +87,54 @@ annotate service.Companies with {
 annotate service.Companies with {
     name @Common.Label : '{i18n>Name}'
 };
+
+
+
+
+
+
+
+
+
+
+
+
+
+annotate service.Vendors with @(
+    UI.HeaderFacets : [
+        {
+            $Type : 'UI.ReferenceFacet',
+            ID : 'companyCode',
+            Target : 'company/@UI.DataPoint#companyCode',
+        },
+        {
+            $Type : 'UI.ReferenceFacet',
+            ID : 'country',
+            Target : 'company/@UI.DataPoint#country',
+        },
+    ],
+    UI.LineItem:[
+      {
+            $Type : 'UI.DataField',
+            Label : 'Vendor Code',
+            Value : vendorCode,
+        },
+       {
+            $Type : 'UI.DataField',
+            Label : 'Vendor Country',
+            Value : country,
+        },
+        {
+            $Type : 'UI.DataField',
+            Label : 'Vendor Name',
+            Value : name,
+        },
+        {
+             $Type : 'UI.DataField',
+            Label : 'Vendor Email',
+            Value : email,
+        }
+
+    ]
+);
 
